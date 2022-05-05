@@ -13,9 +13,6 @@ function playerPlay() {
     return prompt("Choose between Rock, Paper or Scissors").toLowerCase();
 }
 
-var computerSelection = computerPlay();
-var playerSelection = playerPlay();
-
 function playRound(playerSelection, computerSelection) {  
     if (playerSelection === "rock" && computerSelection === "paper") return "Computer Wins";
     if (playerSelection === "rock" && computerSelection === "scissors") return "Player wins";
@@ -26,4 +23,13 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) return "Tie";
 }
 
-console.log(playRound(playerSelection,computerSelection));
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        var computerSelection = computerPlay();
+        var playerSelection = playerPlay();
+        console.log(playRound(playerSelection,computerSelection));
+    }
+}
+
+game();
