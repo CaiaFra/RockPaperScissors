@@ -9,12 +9,21 @@ function computerPlay() {
     }
 }
 
-console.log(computerPlay());
-
-function playerSelection() {
-    var selection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
-    console.log(selection);
-    return selection;
+function playerPlay() {
+    return prompt("Choose between Rock, Paper or Scissors").toLowerCase();
 }
 
-playerSelection();
+var computerSelection = computerPlay();
+var playerSelection = playerPlay();
+
+function playRound(playerSelection, computerSelection) {  
+    if (playerSelection === "rock" && computerSelection === "paper") return "Computer Wins";
+    if (playerSelection === "rock" && computerSelection === "scissors") return "Player wins";
+    if (playerSelection === "scissors" && computerSelection === "paper") return "Player Wins";
+    if (playerSelection === "paper" && computerSelection === "scissors") return "Computer Wins";
+    if (playerSelection === "paper" && computerSelection === "rock") return "Player Wins";
+    if (playerSelection === "scissors" && computerSelection === "rock") return "Computer Wins";
+    if (playerSelection === computerSelection) return "Tie";
+}
+
+console.log(playRound(playerSelection,computerSelection));
