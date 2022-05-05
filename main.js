@@ -1,12 +1,20 @@
 function computerPlay() {
     var randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
-        return "Rock"
+        return "rock"
     } else if (randomNumber === 1) {
-        return "Paper"
+        return "paper"
     } else {
-        return "Scissors"
+        return "scissors"
     }
 }
 
 console.log(computerPlay());
+
+function playerSelection() {
+    var selection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
+    console.log(selection);
+    return selection;
+}
+
+playerSelection();
