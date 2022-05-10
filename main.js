@@ -46,4 +46,17 @@ function game() {
   }
 }
 
-game();
+window.addEventListener('click', (e) => {
+  let playerSelection = e.target.className;
+  
+  if (playerSelection !== "rock" && playerSelection !== 'paper' && playerSelection !== 'scissors') return;
+  
+  let computerSelection = computerPlay();
+
+  let result = playRound(playerSelection, computerSelection);
+
+  console.log(result);
+
+})
+
+// game();
