@@ -18,7 +18,7 @@ function playRound(playerSelection, computerSelection) {
 		return "Computer Wins";
 
   if (playerSelection === "rock" && computerSelection === "scissors") 
-		return "Player wins";
+		return "Player Wins";
 
   if (playerSelection === "scissors" && computerSelection === "paper") 
 		return "Player Wins";
@@ -36,6 +36,25 @@ function playRound(playerSelection, computerSelection) {
 		return "Tie";
 }
 
+function updateScore(result) {
+  if (result === "Computer Wins") computerScore++;
+  if (result === "Player Wins") playerScore++;
+
+  const playerDiv = document.querySelector(".player-score");
+  const computerDiv = document.querySelector(".computer-score");
+
+  playerDiv.textContent = playerScore;
+  computerDiv.textContent = computerScore;
+}
+
+function updateDiv(result) {
+  const div = document.querySelector('.result');
+
+  if (playerScore === 5) result = "You won against the computer!";
+  if (computerScore === 5) result = "The computer won against you!";
+  div.textContent = result;
+}
+
 window.addEventListener('click', (e) => {
   let playerSelection = e.target.className;
   
@@ -45,14 +64,8 @@ window.addEventListener('click', (e) => {
 
   let result = playRound(playerSelection, computerSelection);
 
-  if (result === "Computer Wins") computerScore++;
-  if (result === "Player Wins") playerScore++;
+  updateScore(result);
 
-  const div = document.querySelector('.result');
-  div.style.textAlign = "center";
-  div.style.margin = "auto";
-
-  if (playerScore === 5) result = "You won against the computer!";
-  if (computerScore === 5) result = "The computer won against you!";
-  div.textContent = result;
+  updateDiv(result);
+  
 });
