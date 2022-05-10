@@ -51,8 +51,10 @@ window.addEventListener('click', (e) => {
 
   let result = playRound(playerSelection, computerSelection);
 
-  console.log(result);
-
+  const div = document.querySelector('.result');
+  div.style.textAlign = "center";
+  div.style.margin = "auto";
+  div.textContent = result;
 })
 
 // game();
