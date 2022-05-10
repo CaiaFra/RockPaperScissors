@@ -1,3 +1,7 @@
+// Initializing the game
+let computerScore = 0;
+let playerScore = 0;
+
 function computerPlay() {
   let randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
@@ -32,16 +36,6 @@ function playRound(playerSelection, computerSelection) {
 		return "Tie";
 }
 
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let computerSelection = computerPlay();
-    let playerSelection = playerPlay();
-		
-    console.log(playRound(playerSelection,computerSelection));
-  }
-}
-
 window.addEventListener('click', (e) => {
   let playerSelection = e.target.className;
   
@@ -51,10 +45,14 @@ window.addEventListener('click', (e) => {
 
   let result = playRound(playerSelection, computerSelection);
 
+  if (result === "Computer Wins") computerScore++;
+  if (result === "Player Wins") playerScore++;
+
   const div = document.querySelector('.result');
   div.style.textAlign = "center";
   div.style.margin = "auto";
-  div.textContent = result;
-})
 
-// game();
+  if (playerScore === 5) result = "You won against the computer!";
+  if (computerScore === 5) result = "The computer won against you!";
+  div.textContent = result;
+});
