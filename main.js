@@ -9,10 +9,6 @@ function computerPlay() {
   }
 }
 
-function playerPlay() {
-  return prompt("Choose between Rock, Paper or Scissors").toLowerCase();
-}
-
 function playRound(playerSelection, computerSelection) {  
   if (playerSelection === "rock" && computerSelection === "paper") 
 		return "Computer Wins";
