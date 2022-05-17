@@ -2,6 +2,10 @@
 let computerScore = 0;
 let playerScore = 0;
 
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
 function computerPlay() {
   let randomNumber = Math.floor(Math.random() * 3);
   if (randomNumber === 0) {
@@ -55,9 +59,12 @@ function updateDiv(result) {
   div.textContent = result;
 }
 
-window.addEventListener('click', (e) => {
-  let playerSelection = e.target.className;
-  
+rockButton.addEventListener('click', playGame);
+paperButton.addEventListener('click', playGame);
+scissorsButton.addEventListener('click', playGame);
+
+function playGame(playerSelection) {
+  playerSelection = this.className;
   if (playerSelection !== "rock" && playerSelection !== 'paper' && playerSelection !== 'scissors') return;
   
   let computerSelection = computerPlay();
@@ -66,6 +73,30 @@ window.addEventListener('click', (e) => {
 
   updateScore(result);
 
-  updateDiv(result);
+  updateDiv(result); 
+
+  if (playerScore === 5 || computerScore === 5) endGame();
+}
+
+function endGame() {
+  rockButton.removeEventListener('click', playGame);
+  paperButton.removeEventListener('click', playGame);
+  scissorsButton.removeEventListener('click', playGame);
+
+  const newGameButton = document.createElement('button');
+  const body = document.querySelector('body');
+}
+
+// window.addEventListener('click', (e) => {
+//   let playerSelection = e.target.className;
   
-});
+//   if (playerSelection !== "rock" && playerSelection !== 'paper' && playerSelection !== 'scissors') return;
+  
+//   let computerSelection = computerPlay();
+
+//   let result = playRound(playerSelection, computerSelection);
+
+//   updateScore(result);
+
+//   updateDiv(result); 
+// });
