@@ -1,21 +1,30 @@
-* {
+body {
   margin: 0;
-  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 
-.result {
-  border: 2px black solid;
-  height: 50px;
-  width: 300px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header {
+  text-align: center;
+  background-color: #2D3047;
+  color: #E0CA3C;
+  padding: 20px;
 }
 
-.container {
+.page {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-box {
+  background-color: #93B7BE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  height: 100vh;
+  margin: 0;
 }
 
 .computer-score, .player-score {
@@ -26,4 +35,46 @@
   justify-content: center;
   align-items: center;
   margin: 20px;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.result {
+  border: 2px black solid;
+  height: 50px;
+  width: 300px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #2D3047;
+  color: #E0CA3C;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-items: center; */
 }
