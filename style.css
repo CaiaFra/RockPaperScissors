@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  box-sizing: border-box;
-  min-height: 100vh;
+  padding: 0;
+  height: 100%;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 header {
@@ -15,6 +16,8 @@ header {
   display: flex;
   flex-direction: column;
   flex: 1;
+  align-items: stretch;
+  min-height: 100vh;
 }
 
 .main-box {
@@ -23,8 +26,6 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   flex-grow: 1;
-  height: 100vh;
-  margin: 0;
 }
 
 .computer-score, .player-score {
@@ -64,17 +65,14 @@ header {
   gap: 20px;
   padding-top: 30px;
 }
-
+  
 .footer {
   text-align: center;
   background-color: #2D3047;
   color: #E0CA3C;
   padding: 10px;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
-  /* display: flex;
-  align-items: center;
-  justify-items: center; */
 }
