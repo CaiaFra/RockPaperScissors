@@ -8,7 +8,7 @@ body {
 header {
   text-align: center;
   background-color: #2D3047;
-  color: #E0CA3C;
+  color: #e0ac3c;
   padding: 20px;
 }
 
@@ -17,7 +17,7 @@ header {
   flex-direction: column;
   flex: 1;
   align-items: stretch;
-  min-height: 100vh;
+  min-height: 99vh;
 }
 
 .main-box {
@@ -26,6 +26,42 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   flex-grow: 1;
+}
+
+.logo {
+  text-align: center;
+  margin: 20px;
+}
+
+.logo img {
+  height: auto;
+  width: 200px;
+}
+
+.buttons img:hover {
+  cursor: pointer;
+}
+
+button {
+  border-radius: 50%;
+}
+
+.buttons img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.rock {
+  background-color: grey;
+}
+
+.paper {
+  background-color: aquamarine;
+}
+
+.scissors {
+  background-color: pink;
 }
 
 .computer-score, .player-score {
@@ -70,6 +106,7 @@ header {
   text-align: center;
   background-color: #2D3047;
   color: #E0CA3C;
+  font-weight: bolder;
   padding: 10px;
   position: relative;
   bottom: 0;
